@@ -1,10 +1,10 @@
 from django.contrib import admin
 
-from .models import Folder, FolderAdmin
-from .models import Encoding, EncodingAdmin
-from .models import Report, ReportAdmin
-from .models import Parameter, ParameterAdmin
-from .models import Connection, ConnectionAdmin
+from .models.folder import Folder, FolderAdmin
+from .models.encoding import Encoding, EncodingAdmin
+from .models.report import Report, ReportAdmin
+from .models.parameter import Parameter, ParameterAdmin
+from .models.connection import Connection, ConnectionAdmin
 
 
 # Registered models for admin
