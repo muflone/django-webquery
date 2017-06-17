@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django import forms
 from django.db import models
 
 from .engines import detect_db_engines
@@ -22,8 +23,16 @@ class Connection(models.Model):
         return self.name
 
 
+class ConnectionForm(forms.ModelForm):
+    class Meta:
+        widgets = {
+            'password': forms.PasswordInput,
+        }
+
+
 class ConnectionAdmin(admin.ModelAdmin):
     """Define the visible fields"""
+    form = ConnectionForm
     list_display = ['name',
                     'description',
                     'engine']
