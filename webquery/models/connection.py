@@ -11,10 +11,10 @@ class Connection(models.Model):
     engine = models.CharField(max_length=255,
                               choices=detect_db_engines())
     connection_string = models.TextField()
-    server = models.CharField(max_length=255)
-    database = models.CharField(max_length=255)
-    username = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
+    server = models.CharField(max_length=255, blank=True)
+    database = models.CharField(max_length=255, blank=True)
+    username = models.CharField(max_length=255, blank=True)
+    password = models.CharField(max_length=255, blank=True)
     encoding = models.ForeignKey('Encoding')
 
     def __str__(self):
